@@ -3,6 +3,7 @@ package com.cui.netty_client_demo;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageCodec;
+import io.netty.util.ReferenceCountUtil;
 
 import java.nio.ByteBuffer;
 import java.util.List;
@@ -50,6 +51,8 @@ public class TcpCodec extends ByteToMessageCodec<Msg> {
 
 			logger.error("解码异常:"+e.toString());
 
+		}finally{
+			ReferenceCountUtil.release(buffer);
 		}
 
 	}
