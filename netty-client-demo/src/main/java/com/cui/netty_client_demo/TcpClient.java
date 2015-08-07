@@ -13,7 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * tcp服务端
+ * tcp客户端
  * 
  * @author cuipengfei
  *
@@ -21,8 +21,8 @@ import org.slf4j.LoggerFactory;
 public class TcpClient extends Thread {
 
 	public ChannelHandlerContext chtx;
+	
 	private static TcpClient tcpClient;
-
 	public static TcpClient getInstance() {
 		if (tcpClient == null) {
 			synchronized(TcpClient.class){
