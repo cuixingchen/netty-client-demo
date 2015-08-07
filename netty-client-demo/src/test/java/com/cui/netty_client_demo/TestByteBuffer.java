@@ -34,9 +34,9 @@ public class TestByteBuffer extends TestCase {
 		byte[] b = msg.getBytes();
 		ByteBuffer nb = ByteBuffer.allocate(10);
 		nb.put(b);
-		nb.flip();
+//		nb.flip();
 		System.out.println("1." + nb.get() + ":" + nb.mark() + ":" + nb);
-		// nb.flip();
+		 nb.flip();
 		System.out.println("2." + nb.get() + ":" + nb);
 		nb.reset();
 		System.out.println("3." + nb.get() + ":" + nb);
